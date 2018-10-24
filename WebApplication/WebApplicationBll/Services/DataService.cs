@@ -61,7 +61,7 @@ namespace WebApplicationBll.Services
         public void Report(IEnumerable<MergedTablesDTO> result)
         {
             
-            using (XmlTextWriter xmlWriter = new XmlTextWriter("C:\\Users\\Gleb\\Documents\\GlebSviridov\\SberTry\\SberTry\\WebApplication\\WebApplication.sln\\Report.xml", Encoding.UTF8))
+            using (XmlTextWriter xmlWriter = new XmlTextWriter("C:\\Users\\Gleb\\Documents\\GlebSviridov\\SberTry\\SberTry\\WebApplication\\Report.xml", Encoding.UTF8))
             {
                 xmlWriter.WriteStartElement("List");
                 foreach (var l in result)
