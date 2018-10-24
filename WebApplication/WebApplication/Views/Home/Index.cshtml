@@ -1,0 +1,98 @@
+﻿@using WebApplicationBll.DTO
+@model IEnumerable<WebApplicationBll.DTO.MergedTablesDTO>
+@{
+    ViewData["Title"] = "Hello Data";
+}
+
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+<tr>
+    <td>
+        <label>Название столбца для фильтра</label>
+        <input type="text" name="filterData.TableName" />
+    </td>
+    <label>Значения для фильра через пробел</label>
+    <td><input type="text" name="filterData.FilterValue" /> </td>
+    <p><input type="submit" value="Send" /></p>
+</tr>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FtableId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SomeDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecondFloatNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Checker)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Access)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TableDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SomeFloatNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SomeIntNumber)
+        </th>
+        <th></th>
+    </tr>
+ 
+    @foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FtableId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SomeDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecondFloatNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Checker)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Access)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TableDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SomeFloatNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SomeIntNumber)
+        </td>
+
+    </tr>
+    }
+ 
+</table>
+
